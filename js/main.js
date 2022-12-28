@@ -26,7 +26,13 @@ const passengers = [
 ];
 let passengers1=[];
 let b=0;
-for(i=passengers.length;i>0;i--){
+let big=passengers[0].connectedFlights;
+for(k=0;k<passengers.length;k++){
+  if(passengers[k].connectedFlights>big){
+      big=passengers[k].connectedFlights;
+  }
+}
+for(i=big;i>0;i--){
   for(j=0;j<passengers.length;j++){
     if(passengers[j].connectedFlights==i){
       passengers1[b]=passengers[j];
